@@ -1,0 +1,261 @@
+%-------------------------------------------------------------------------------
+%                      Template Naskah Skripsi
+%               	Berdasarkan format JTETI FT UGM
+% 						(c) @gunturdputra 2014
+%-------------------------------------------------------------------------------
+
+%Template pembuatan naskah skripsi.
+\documentclass{jtetiskripsi}
+
+%Untuk prefiks pada daftar gambar dan tabel
+\usepackage[titles]{tocloft}
+\renewcommand\cftfigpresnum{Gambar\  }
+\renewcommand\cfttabpresnum{Tabel\   }
+\renewcommand{\arraystretch}{1.25}
+
+%Untuk hyperlink dan table of content
+\usepackage{hyperref}
+\newlength{\mylenf}
+\settowidth{\mylenf}{\cftfigpresnum}
+\setlength{\cftfignumwidth}{\dimexpr\mylenf+2em}
+\setlength{\cfttabnumwidth}{\dimexpr\mylenf+2em}
+\usepackage{hyphenat}
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+%Untuk Bold Face pada Keterangan Gambar
+\usepackage[labelfont=bf]{caption}
+
+%Untuk caption dan subcaption
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk data proposal skripsi
+%-----------------------------------------------------------------
+\titleind{Rancang Bangun Sistem Informasi Penggajian Karyawan Berbasis Web Menggunakan Framework Codeigniter
+dengan Metode Extreme Programming
+(Studi Kasus di Universitas Proklamasi 45 Yogyakarta)}
+
+\fullname{Devara Eko Katon Mahardika}
+
+\idnum{13650044}
+
+\approvaldate{30 Januari 2018}
+
+\degree{Sarjana Komputer}
+
+\yearsubmit{2018}
+
+\program{Teknik Informatika}
+
+\dept{Teknik Informatika}
+
+\firstsupervisor{Maria Ulfa Siregar, S.Kom. MIT.}
+\firstnip{19780106 200212 2 001}
+
+\secondsupervisor{Nama Dosen 2}
+\secondnip{NIP Dosen 2}
+
+%-----------------------------------------------------------------
+%Disini akhir masukan untuk data proposal skripsi
+%-----------------------------------------------------------------
+
+\begin{document}
+
+\cover
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{\approvalname}
+\approvalpage
+
+\acc
+
+\authenticity
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk Prakata
+%-----------------------------------------------------------------
+\preface
+Assalamu'alaikum Wr. Wb.
+
+\vspace{0.5cm}
+
+\emph{Alhamdulillahirabil'alamin}, puji syukur atas kehadirat Allah SWT karena hanya dengan rahmat dan hidayah-Nya, penulis dapat menyelesaikan penulisan skripsi ini yang berjudul "Rancang Bangun Sistem Informasi Penggajian Karyawan Berbasis Web Menggunakan \emph{Framework Codeigniter} dengan Metode \emph{Extreme Programming} (Studi Kasus di Universitas Proklamasi 45 Yogyakarta)" dengan lancar dan tanpa suatu halangan apapun. Tak lupa sholawat serta salam senantiasa terucarahkan kepada Baginda Rasul Muhammad SAW, semoga kita mendapatkan syafaatnya di Yaumul Qiyamah kelak.
+
+Keberhasilan dalam penulisan skripsi ini yang mana menjadi salah satu syarat penyelesaian program sarjana Teknik Informatika Fakultas Sains dan Teknologi UIN Sunan Kalijaga, tidak lepas dari bantuan berbagai pihak yang dengan tulus dan ikhlas telah memberikan masukan kepada penulis. Oleh karena itu dalam kesempatan ini penulis mengucapkan terima kasih yang sebesar-besarnya kepada:
+
+\begin{enumerate}
+\itemsep0em
+\item Bapak Prof. Dr. KH. Yudian Wahyudi, M.A., P.hD., selaku Rektor UIN Sunan Kalijaga Yogyakarta;
+\item Bapak Dr. Murtono, M.Si., selaku Dekan Fakultas Sains dan Teknologi UIN Sunan Kalijaga Yogyakarta; 
+\item Bapak Dr. Bambang Sugiantoro, M.T, selaku Ketua Program Studi Teknik Informatika Fakultas Sains dan Teknologi UIN Sunan Kalijaga Yogyakarta;
+\item Ibu Dr. Shofwatul 'Uyun, S.T., M.Kom., selaku Dosen Pembimbing Akademik yang telah memberikan arahan serta masukan selama masa perkuliahan;
+\item Ibu Maria Ulfa Siregar, S.Kom., MIT., selaku Dosen Pembimbing Skripsi yang telah membimbing serta memberikan koreksi selama pengerjaan skripsi ini;
+\item Seluruh dosen dan staf Program Studi Teknik Informatika Fakultas Sains dan Teknologi UIN Sunan Kalijaga Yogyakarta;
+\item Segenap staf Universitas Proklamasi 45 Yogyakarta yang telah membantu dalam menyelesaikan skripsi ini;
+\item Kedua orang tua dan keluarga yang selalu memberikan cinta dan kasih sayang serta doa dan dukungannya;
+\item Keluarga besar PMII Rayon Aufklarung, khususnya sahabat Korp Frekuensi yang selalu menemani saat suka maupun duka, serta memberikan semangat selama masa perkuliahan;
+\item Teman-teman seperjuangan Program Studi Teknik Informatika Fakultas Sains dan Teknologi UIN Sunan Kalijaga Yogyakarta;
+\item Semua pihak yang tidak dapat penulis sebutkan satu persatu yang telah membantu dalam proses penyelesaian skripsi ini.
+
+\end{enumerate}
+
+Penulis menyadari bahwa penulisan skripsi ini jauh dari kata sempurna dan masih banyak kekurangan. Kritik dan saran kepada penulis sangat diharapkan guna menyempurnakannya. Semoga skripsi ini dapat memberikan manfaat bagi pembaca maupun peneliti selanjutnya.
+
+\vspace{0.5cm}
+
+Wassalamu'alaikum Wr. Wb.
+
+\begin{tabular}{p{7.5cm}c}
+&Yogyakarta, 31 Agustus 2018\\
+& Penulis \\
+&\\
+& \underline{Devara Eko K M} \\
+& 13650044
+\end{tabular}
+
+%-----------------------------------------------------------------
+%Disini awal masukan Acknowledment
+%-----------------------------------------------------------------
+\acknowledgment
+Halaman ini penulis persembahkan kepada semua pihak yang telah membantu dan memberi dukungan kepada penulis, sebagai berikut:
+\begin{enumerate}
+    \itemsep0em
+    \item Orang tua tercinta, khususnya Ibunda atau Mamak Sumilah yang telah membesarkan anak satu-satunya sehingga menjadi seperti sekarang ini dan tak lupa selalu memberikan doa serta nasehat kepada penulis.
+    \item Dosen-dosen TIF, Pak Bambang, Pak Agus, Pak Sumarsono, Pak Aulia, Pak Nur, Pak Rahmat, Pak Didik, Pak Mustakim, Bu Uyun, Bu Ade, dan Bu Maria, terima kasih atas ilmu yang telah diberikan selama di bangku perkuliahan, semoga dapat bermanfaat dikemudian hari.
+    \item \textbf{Pergerakan Mahasiswa Islam Indonesia} (PMII), tanpa ber-PMII saya tidak bisa menjadi seperti sekarang ini. Dan di sinilah saya membuktikan bahwa orang PMII juga cinta terhadap teknologi serta membuktikan kualitasnya.
+    \item Sahabat/i tercinta, PMII KORP FREKUENSI 2013 yang telah melewati suka duka bersama dalam proses berorganisasi selama ini.
+    \item Keluarga besar PMII RAYON AUFKLARUNG yang memberikan banyak pelajaran berharga dalam menapaki hiruk pikuknya perjalanan ini, serta menyadarkan saya bahwa kuliah di informatika tidak hanya sekedar ngoding, tetapi masih banyak hal berguna yang dapat dilakukan.
+    \item TRI MURBA, Moh. Fahrizal Yusuf dan Dienda Lora Buana, semoga seluruh pengalaman perjuangan kita dapat terkenang selalu.
+    \item Teman-teman TFORGAS satu angkatan, yang tidak dapat penulis sebutkan semuanya.
+    \item Teman-teman pengurus HMPS Teknik Informatika periode 2015-2017, Aya, Anisa, Dini, Darma, Agil, dan semua yang tidak dapat disebutkan satu persatu.
+    \item Adik-adik angkatanku tercinta, Nafi, Anisa, Ozi, Dani, Riko, Zidni, Irsa, Hasan, Fauzan, dkk, terimakasih telah menjadi tonggak estafet HMPS Teknik Informatika kedepan.
+    \item Kepada orang-orang yang selalu memberikan semangat dan motivasi dalam menyelesaikan skripsi ini, Lisda Meilinda, Wayan Syafi'i, Dudi Arya Guntara, Markisinta, Dwi Kumala Mursyid, Mirza Firdaus Avecina, dan semua yang tidak bisa disebutkan satu persatu.
+    \item Rekan-rekan kerja di Universitas Proklamasi 45 Yogyakarta yang selalu memberikan dukungan dalam penyelesaian skripsi ini.
+    \item Seluruh pecinta teknologi, khususnya bahasa pemrograman, yang telah saling \emph{sharing online} dalam berbagi dan membantu dalam pemecahan suatu masalah.
+\end{enumerate}
+
+
+\motto
+Seseorang tidak akan memperjuangkan perubahan dari ketidakbenaran menjadi kebenaran ketika yang harus ia perlihara adalah kemapanannya dalam ketidakbenaran. - Emha Ainun Nadjib
+
+%-----------------------------------------------------------------
+%Disini akhir masukan untuk muka skripsi
+%-----------------------------------------------------------------
+\begin{onehalfspace}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{DAFTAR ISI}
+\tableofcontents
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{DAFTAR TABEL}
+\listoftables
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+\listoffigures
+\end{onehalfspace}
+
+%-----------------------------------------------------------------
+%Disini awal masukan Intisari
+%-----------------------------------------------------------------
+\begin{abstractind}
+\begin{center}
+    \textbf{RANCANG BANGUN SISTEM INFORMASI PENGGAJIAN KARYAWAN BERBASIS WEB MENGGUNAKAN \emph{FRAMEWORK CODEIGNITER} DENGAN METODE \emph{EXTREME PROGRAMMING}}\\
+    \textbf{(STUDI KASUS DI UNIVERSITAS PROKLAMASI 45 YOGYAKARTA)}
+\end{center}
+
+\begin{center}
+    \textbf{\underline{Devara Eko Katon Mahardika}\\NIM.13650044}
+\end{center}
+
+\begin{center}
+    \textbf{INTISARI}
+\end{center}
+
+Universitas Proklamasi 45 Yogyakarta adalah universitas swasta yang dibawahi oleh suatu Yayasan yang telah menerapkan berbagai sistem informasi di berbagai bidang kerjanya. Akan tetapi dalam proses penggajian karyawannya masih dilakukan secara manual dan belum memanfaatkan sistem yang terkomputerisasi, seperti rekap absensi, rekap upah selain gaji pokok, serta penjumlahan gaji yang diterima oleh karyawan. Hal tersebut membuat proses penggajian menjadi kurang efektif dan efisien. Penelitian ini bertujuan untuk membangun sistem usulan yaitu sistem informasi penggajian karyawan berbasis web pada Universitas Proklamasi 45 Yogyakarta dengan bahasa pemrograman PHP menggunakan Fremework Codeigniter dan MySQL sebagai basis datanya.
+
+Metode pengembangan sistem yang digunakan adalah metode \emph{Extreme Programming}. Metode ini dipilih karena sangat mengedepankan komunikasi yang intens antara klien dengan pengembang sistem sehingga ketika terdapat perubahan ataupun kesalahan dalam sistem, pengembang selalu siap untuk memperbaikinya. \emph{Extreme Programming} juga memiliki tahapan yang sederhana, yaitu \emph{planning}, \emph{design}, \emph{coding}, dan \emph{testing}
+
+Hasil dari penelitian ini adalah dihasilkannya sistem informasi penggajian karyawan berbasis web yang memiliki berbagai aktor yang terlibat dalam pengelolaan dan pengolahan datanya. Dengan adanya sistem informasi ini, proses penggajian karyawan menjadi lebih efektif dan efisien, karena data penggajian diproses dan dihitung oleh sistem sehingga memiliki tingkat akurasi data yang tinggi serta tidak membutuhkan waktu yang lama dalam proses perhitungannya.
+
+\bigskip
+\noindent
+\textbf{Kata kunci :} Berbasis Web, Sistem Informasi, Sistem Informasi Penggajian, \emph{Codeigniter}, \emph{Extreme Programming}.
+\end{abstractind}
+
+\begin{abstracteng}
+\begin{center}
+    \textbf{DESIGN AND DEVELOPMENT OF WEB BASED EMPLOYEE PAYROLL INFORMATION SYSTEM USING CODEIGNITER FRAMEWORK AND EXTREME PROGRAMMING METHOD}\\
+    \textbf{(CASE STUDY AT UNIVERSITY OF PROCLAMATION 45 YOGYAKARTA)}
+\end{center}
+
+\begin{center}
+    \textbf{\underline{Devara Eko Katon Mahardika}\\NIM.13650044}
+\end{center}
+
+\begin{center}
+    \textbf{ABSTRACT}
+\end{center}
+
+Universitas Proklamasi 45 Yogyakarta is a private university which is supervised by a Foundation that has implemented various information systems in various fields of work. However, in the payroll process the employees are still done manually and have not utilized a computerized system, such as attendance recap, wage recapitulation in addition to basic salary, as well as the sum of salary received by employees. This makes the payroll process less effective and efficient. This study aims to establish a proposed system that is a web-based employee payroll information system at the Universitas Proklamasi 45 Yogyakarta with the PHP programming language using Fremework Codeigniter and MySQL as its database.
+
+The system development method used is the Extreme Programming method. This method was chosen because it promotes intense communication between the client and the system developer so that when there are changes or errors in the system, the developer is always ready to fix it. Extreme Programming also has a simple stage, namely planning, design, coding, and testing.
+
+The results of this study are the result of a web-based employee payroll information system that has various actors involved in the management and processing of its data. With this information system, the employee payroll process becomes more effective and efficient, because payroll data is processed and calculated by the system so that it has a high level of data accuracy and does not require a long time in the calculation process.
+
+\bigskip
+\noindent
+\textbf{\emph{Keywords :}} \emph{Web Application, Information System, Payroll System, Codeigniter, Extreme Programming}.
+\end{abstracteng}
+%-----------------------------------------------------------------
+%Disini akhir masukan Intisari
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+%Disini awal masukan untuk Bab
+%-----------------------------------------------------------------
+\include{bab1}
+
+\include{bab2}
+
+\include{bab3}
+
+\include{bab4}
+
+\include{bab5}
+
+\include{bab6}
+
+\include{bab7}
+
+%-----------------------------------------------------------------
+%Disini akhir masukan Bab
+%-----------------------------------------------------------------
+
+
+%-----------------------------------------------------------------
+% Disini awal masukan untuk Daftar Pustaka
+%-----------------------------------------------------------------
+
+\include{pustaka}
+%-----------------------------------------------------------------
+%Disini akhir masukan Daftar Pustaka
+%-----------------------------------------------------------------
+
+%-----------------------------------------------------------------
+% Disini awal masukan untuk Lampiran
+%-----------------------------------------------------------------
+
+\include{lampiran}
+%-----------------------------------------------------------------
+%Disini akhir masukan Lampiran
+%-----------------------------------------------------------------
+
+\end{document}
